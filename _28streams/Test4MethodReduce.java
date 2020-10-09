@@ -2,6 +2,7 @@ package _28streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Test4MethodReduce {
 
@@ -15,6 +16,8 @@ public class Test4MethodReduce {
 
         int i = ints.stream().reduce((accumulator, element) -> accumulator * element).get(); // Без get() все это не сработает
         System.out.println(i);
+
+        kdjfalsflshd
     }
 }
 // Метод reduce производит математические операции с элементами потока, в данном случае умножение. Параметру accumulator
