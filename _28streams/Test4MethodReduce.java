@@ -18,6 +18,7 @@ public class Test4MethodReduce {
         System.out.println(i);
 
         kdjfalsflshd
+                55655
     }
 }
 // Метод reduce производит математические операции с элементами потока, в данном случае умножение. Параметру accumulator
