@@ -30,5 +30,5 @@ class Info <T extends Number & I1 & I2> { //так имплементируют�
         return value;
     }
 }
-interface I1 {}
-interface I2 {}
+interface I1{}
+interface I2{}

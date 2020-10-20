@@ -13,7 +13,7 @@ public class ParametrizedClass {
 //    }
 }
 
-class Info <T> {
+class Info <T> { //так имплементируются интрефейсы в generics
     private T value;
 
     public Info(T value) {
