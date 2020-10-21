@@ -1,7 +1,5 @@
 package _24queue;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Objects;
 import java.util.PriorityQueue;
 
@@ -56,7 +54,7 @@ class Student implements Comparable <Student> {
     }
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         int result = this.course - o.course;
         if (result == 0) {
             result = this.name.compareTo(o.name);

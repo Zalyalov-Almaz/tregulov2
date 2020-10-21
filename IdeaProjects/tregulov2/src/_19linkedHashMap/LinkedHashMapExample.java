@@ -1,8 +1,5 @@
 package _19linkedHashMap;
 
-
-import org.jetbrains.annotations.NotNull;
-
 import java.util.LinkedHashMap;
 import java.util.Objects;
 
@@ -64,7 +61,7 @@ class Student implements Comparable<Student>{
     }
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         int result = this.name.compareTo(o.name);
         if (result == 0) {
             result = this.surname.compareTo(o.surname);

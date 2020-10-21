@@ -1,6 +1,5 @@
 package _18treeMap;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 import java.util.TreeMap;
@@ -75,7 +74,7 @@ class Student implements Comparable<Student>{
     }
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         int result = this.name.compareTo(o.name);
         if (result == 0) {
             result = this.surname.compareTo(o.surname);

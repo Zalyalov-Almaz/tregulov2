@@ -1,19 +1,23 @@
 package _29multithreading._13threadPoolExecutorService;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class ThreadPoolExample {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
+//        ExecutorService executorService = Executors.newSingleThreadExecutor(); //newSingleThreadExecutor создает pool, содержащий всего один thread
         for (int i = 0; i < 10; i++) {
             executorService.execute(new RunnableImp100()); //execute передает задачу, описанную в методе run переданного объекта
         }                                                  //в Thread pool, где оно выполняется одним из потоков
+
         executorService.shutdown();                        //после вызова метода shutdown, pool понимает, что все задачи выполнены(в данном случае,
-        System.out.println("Main ends");                   //закончились итерации цикла) и прекращает свою работу.
+                                                           //закончились итерации цикла) и прекращает свою работу.
+        executorService.awaitTermination(5, TimeUnit.SECONDS);//awaitTermination принуждает поток в котором он вызвался подождать пока не выполнятся
+                                                                     //все задачи executorService либо пока не пройдет время переданное в параметр
+        System.out.println("Main ends");
     }
 }
 
@@ -35,3 +39,5 @@ class RunnableImp100 implements Runnable {
 // Thread pool удобнее всего создавать, используя factory методы класса Executors:
 //Executors.newFixedThreadPool(n) - создаст Thread pool с n потоками(где n число потоков);
 //Executors.newSingleThreadPool() - создаст Thread pool с 1 потоком
+
+
