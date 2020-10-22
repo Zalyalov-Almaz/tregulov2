@@ -10,7 +10,7 @@ public class RunnableFactorial {
 
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Factorial factorial = new Factorial(5);
+        Factorial factorial = new Factorial(31);
         executorService.execute(factorial);
         executorService.shutdown();
         executorService.awaitTermination(10, TimeUnit.SECONDS);
@@ -38,3 +38,4 @@ class Factorial implements Runnable {
         RunnableFactorial.factorialResult = result;
     }
 }
+//Недостатками такого метода вычисления факториала, является то, что run не бросает исключений, при введении неверного числа
